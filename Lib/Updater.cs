@@ -44,7 +44,7 @@ namespace AdventOfCode {
 
             UpdateProjectReadme(years.Min(), years.Max());
             UpdateReadmeForYear(calendar);
-            UpdateSplashScreen(calendar);
+            // UpdateSplashScreen(calendar);
             UpdateReadmeForDay(problem);
             UpdateInput(problem);
             UpdateRefout(problem);

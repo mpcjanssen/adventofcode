@@ -1,6 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
+using System.Text.RegularExpressions;
+using System.Text;
+using System.Threading;
+using Microsoft.CodeAnalysis.VisualBasic.Syntax;
 
 namespace AdventOfCode.Y2019.Day01 {
 
@@ -8,28 +13,28 @@ namespace AdventOfCode.Y2019.Day01 {
 
         public string GetName() => "The Tyranny of the Rocket Equation";
 
-        public IEnumerable<object> Solve(string input) {
-            yield return PartOne(input);
-            yield return PartTwo(input);
+        public IEnumerable<object> Solve(string input)
+        {
+            var masses = input.Split("\n").Select(x => Int64.Parse(x));
+            yield return PartOne(masses);
+            yield return PartTwo(masses);
         }
 
-        int PartOne(string input) => Solve(input, false);
-        int PartTwo(string input) => Solve(input, true);
+        long PartOne(IEnumerable<long> input) {
+            return input.Select(x=> x/3 -2).Sum();
+        }
 
-        int Solve(string input, bool recursive) {
-            var weights = new Queue<int>(input.Split("\n").Select(x => int.Parse(x)));
-            var res = 0;
-            while (weights.Any()) {
-                var weight = weights.Dequeue();
-                var fuel = (int)(Math.Floor(weight / 3.0) - 2);
-                if (fuel > 0) {
-                    if (recursive) {
-                        weights.Enqueue(fuel);
-                    }
-                    res += fuel;
-                }
+        IEnumerable<Int64> Fuels(Int64 mass)
+        {
+            var fuel = mass;
+            while (true)
+            {
+                fuel = fuel / 3 - 2;
+                \\
             }
-            return res;
+        }
+        long PartTwo(IEnumerable<long> input) {
+            return input.Select(x=> Fuels(x).TakeWhile(y=> y > 0).Sum()).Sum();
         }
     }
 }

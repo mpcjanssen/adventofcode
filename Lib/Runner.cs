@@ -41,13 +41,6 @@ namespace AdventOfCode {
         public static string WorkingDir(this Solver solver) {
             return WorkingDir(solver.Year(), solver.Day());
         }
-
-        public static SplashScreen SplashScreen(this Solver solver) {
-            var tsplashScreen = Assembly.GetEntryAssembly().GetTypes()
-                 .Where(t => t.GetTypeInfo().IsClass && typeof(SplashScreen).IsAssignableFrom(t))
-                 .Single(t => Year(t) == solver.Year());
-            return (SplashScreen)Activator.CreateInstance(tsplashScreen);
-        }
     }
 
     class Runner {
@@ -58,7 +51,7 @@ namespace AdventOfCode {
             var lastYear = -1;
             foreach (var solver in tsolvers.Select(tsolver => Activator.CreateInstance(tsolver) as Solver)) {
                 if (lastYear != solver.Year()) {
-                    solver.SplashScreen().Show();
+                    // solver.SplashScreen().Show();
                     lastYear = solver.Year();
                 }
 

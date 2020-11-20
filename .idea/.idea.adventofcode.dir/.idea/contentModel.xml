@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\mpcjanssen\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mpcjanssen\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\mpcjanssen\Src\adventofcode" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="2019" t="Include">
+        <e p="Day01" t="Include">
+          <e p="input.in" t="Include" />
+          <e p="input.refout" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="Solution.cs" t="Include" />
+        </e>
+        <e p="Day02" t="Include">
+          <e p="input.in" t="Include" />
+          <e p="input.refout" t="Include" />
+          <e p="README.md" t="Include" />
+          <e p="Solution.cs" t="Include" />
+        </e>
+        <e p="README.md" t="Include" />
+      </e>
+      <e p="adventofcode.csproj" t="IncludeRecursive" />
+      <e p="App.cs" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="demo.gif" t="Include" />
+      <e p="Lib" t="Include">
+        <e p="Generator" t="Include">
+          <e p="ReadmeGenerator.cs" t="Include" />
+          <e p="SolutionTemplateGenerator.cs" t="Include" />
+          <e p="SplashScreenGenerator.cs" t="Include" />
+        </e>
+        <e p="Model" t="Include">
+          <e p="Calendar.cs" t="Include" />
+          <e p="Problem.cs" t="Include" />
+        </e>
+        <e p="Runner.cs" t="Include" />
+        <e p="SplashScreen.cs" t="Include" />
+        <e p="StringExtensions.cs" t="Include" />
+        <e p="Updater.cs" t="Include" />
+      </e>
+      <e p="LICENSE.txt" t="Include" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="net5.0" t="Include">
+            <e p="adventofcode.AssemblyInfo.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="omnisharp.json" t="Include" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="README.md" t="Include" />
+    </e>
+  </component>
+</project>
