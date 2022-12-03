@@ -1,0 +1,10 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day10.tcl
+
+
+test part1 {} -body {part1} -result {{20 19} 284}
+test part2 {} -body {part2} -result {404}
+
+cleanupTests

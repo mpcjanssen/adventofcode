@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -O3 -DNDEBUG  -shared -Wl,-soname,libspeak.so -o libspeak.so CMakeFiles/speak.dir/library.c.o -ltclstub8.6 

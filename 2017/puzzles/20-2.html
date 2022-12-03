@@ -1,0 +1,27 @@
+<article class="day-desc">
+<h2 id="part2">--- Part Two ---</h2><p>To simplify the problem further, the GPU would like to remove any particles that <em>collide</em>. Particles collide if their positions ever <em>exactly match</em>. Because particles are updated simultaneously, <em>more than two particles</em> can collide at the same time and place.  Once particles collide, they are removed and cannot collide with anything else after that tick.</p>
+<p>For example:</p>
+<pre><code>p=&lt;-6,0,0&gt;, v=&lt; 3,0,0&gt;, a=&lt; 0,0,0&gt;    
+p=&lt;-4,0,0&gt;, v=&lt; 2,0,0&gt;, a=&lt; 0,0,0&gt;    -6 -5 -4 -3 -2 -1  0  1  2  3
+p=&lt;-2,0,0&gt;, v=&lt; 1,0,0&gt;, a=&lt; 0,0,0&gt;    (0)   (1)   (2)            (3)
+p=&lt; 3,0,0&gt;, v=&lt;-1,0,0&gt;, a=&lt; 0,0,0&gt;
+
+p=&lt;-3,0,0&gt;, v=&lt; 3,0,0&gt;, a=&lt; 0,0,0&gt;    
+p=&lt;-2,0,0&gt;, v=&lt; 2,0,0&gt;, a=&lt; 0,0,0&gt;    -6 -5 -4 -3 -2 -1  0  1  2  3
+p=&lt;-1,0,0&gt;, v=&lt; 1,0,0&gt;, a=&lt; 0,0,0&gt;             (0)(1)(2)      (3)   
+p=&lt; 2,0,0&gt;, v=&lt;-1,0,0&gt;, a=&lt; 0,0,0&gt;
+
+p=&lt; 0,0,0&gt;, v=&lt; 3,0,0&gt;, a=&lt; 0,0,0&gt;    
+p=&lt; 0,0,0&gt;, v=&lt; 2,0,0&gt;, a=&lt; 0,0,0&gt;    -6 -5 -4 -3 -2 -1  0  1  2  3
+p=&lt; 0,0,0&gt;, v=&lt; 1,0,0&gt;, a=&lt; 0,0,0&gt;                       X (3)      
+p=&lt; 1,0,0&gt;, v=&lt;-1,0,0&gt;, a=&lt; 0,0,0&gt;
+
+------destroyed by collision------    
+------destroyed by collision------    -6 -5 -4 -3 -2 -1  0  1  2  3
+------destroyed by collision------                      (3)         
+p=&lt; 0,0,0&gt;, v=&lt;-1,0,0&gt;, a=&lt; 0,0,0&gt;
+</code></pre>
+<p>In this example, particles <code>0</code>, <code>1</code>, and <code>2</code> are simultaneously destroyed at the time and place marked <code>X</code>. On the next tick, particle <code>3</code> passes through unharmed.</p>
+<p>
+<em>How many particles are left</em> after all collisions are resolved?</p>
+</article>

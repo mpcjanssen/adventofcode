@@ -1,0 +1,9 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day13.tcl
+
+test part1 {} -body {part1} -result {376}
+test part2 {} -body {part2} -result {Score: 18509}
+
+cleanupTests

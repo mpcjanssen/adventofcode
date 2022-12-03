@@ -1,0 +1,3 @@
+/home/mpcjanssen/Src/adventintcl/2020/lib/speak/CMakeFiles/rebuild_cache.dir
+/home/mpcjanssen/Src/adventintcl/2020/lib/speak/CMakeFiles/speak.dir
+/home/mpcjanssen/Src/adventintcl/2020/lib/speak/CMakeFiles/edit_cache.dir

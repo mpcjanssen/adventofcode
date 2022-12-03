@@ -1,0 +1,9 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day19.tcl
+
+test part1-intcode {} -body {part1} -result {110}
+test part2-intcode {} -body {part2} -result {17302065}
+
+cleanupTests

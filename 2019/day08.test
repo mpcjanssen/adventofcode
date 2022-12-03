@@ -1,0 +1,11 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day08.tcl
+
+
+
+test part1 {} -body {part1} -result {2193}
+test part2 {} -body {part2} -result {YEHEF}
+
+cleanupTests

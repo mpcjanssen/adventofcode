@@ -1,0 +1,9 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day15.tcl
+
+test parts {} -body {aoc::testresults} -result {447 11721679}
+
+
+cleanupTests

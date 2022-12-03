@@ -1,0 +1,10 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day14.tcl
+
+
+test part1-intcode {} -body {part1 $data} -result {ORE 485720}
+test part2-intcode {} -body {part2 1000000000000 [book $data]} -result {3848998}
+
+cleanupTests

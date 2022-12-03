@@ -1,0 +1,111 @@
+<article class="day-desc"><h2 id="part2">--- Part Two ---</h2>
+<p>Now, you need to pass through the firewall without being caught - easier said than done.</p>
+<p>You can't control the <span title="Seriously, what network stack doesn't let you adjust the speed of light?">speed of the packet</span>, but you can <em>delay</em> it any number of picoseconds. For each picosecond you delay the packet before beginning your trip, all security scanners move one step. You're not in the firewall during this time; you don't enter layer <code>0</code> until you stop delaying the packet.</p>
+<p>In the example above, if you delay <code>10</code> picoseconds (picoseconds <code>0</code> - <code>9</code>), you won't get caught:</p>
+<pre><code>State after delaying:
+ 0   1   2   3   4   5   6
+[ ] [S] ... ... [ ] ... [ ]
+[ ] [ ]         [ ]     [ ]
+[S]             [S]     [S]
+                [ ]     [ ]
+
+Picosecond 10:
+ 0   1   2   3   4   5   6
+( ) [S] ... ... [ ] ... [ ]
+[ ] [ ]         [ ]     [ ]
+[S]             [S]     [S]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+( ) [ ] ... ... [ ] ... [ ]
+[S] [S]         [S]     [S]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+
+Picosecond 11:
+ 0   1   2   3   4   5   6
+[ ] ( ) ... ... [ ] ... [ ]
+[S] [S]         [S]     [S]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+[S] (S) ... ... [S] ... [S]
+[ ] [ ]         [ ]     [ ]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+
+Picosecond 12:
+ 0   1   2   3   4   5   6
+[S] [S] (.) ... [S] ... [S]
+[ ] [ ]         [ ]     [ ]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+[ ] [ ] (.) ... [ ] ... [ ]
+[S] [S]         [S]     [S]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+
+Picosecond 13:
+ 0   1   2   3   4   5   6
+[ ] [ ] ... (.) [ ] ... [ ]
+[S] [S]         [S]     [S]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+[ ] [S] ... (.) [ ] ... [ ]
+[ ] [ ]         [ ]     [ ]
+[S]             [S]     [S]
+                [ ]     [ ]
+
+
+Picosecond 14:
+ 0   1   2   3   4   5   6
+[ ] [S] ... ... ( ) ... [ ]
+[ ] [ ]         [ ]     [ ]
+[S]             [S]     [S]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+[ ] [ ] ... ... ( ) ... [ ]
+[S] [S]         [ ]     [ ]
+[ ]             [ ]     [ ]
+                [S]     [S]
+
+
+Picosecond 15:
+ 0   1   2   3   4   5   6
+[ ] [ ] ... ... [ ] (.) [ ]
+[S] [S]         [ ]     [ ]
+[ ]             [ ]     [ ]
+                [S]     [S]
+
+ 0   1   2   3   4   5   6
+[S] [S] ... ... [ ] (.) [ ]
+[ ] [ ]         [ ]     [ ]
+[ ]             [S]     [S]
+                [ ]     [ ]
+
+
+Picosecond 16:
+ 0   1   2   3   4   5   6
+[S] [S] ... ... [ ] ... ( )
+[ ] [ ]         [ ]     [ ]
+[ ]             [S]     [S]
+                [ ]     [ ]
+
+ 0   1   2   3   4   5   6
+[ ] [ ] ... ... [ ] ... ( )
+[S] [S]         [S]     [S]
+[ ]             [ ]     [ ]
+                [ ]     [ ]
+</code></pre>
+<p>Because all smaller delays would get you caught, the fewest number of picoseconds you would need to delay to get through safely is <code>10</code>.</p>
+<p><em>What is the fewest number of picoseconds</em> that you need to delay the packet to pass through the firewall without being caught?</p>
+</article>

@@ -1,0 +1,12 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day05.tcl
+
+test ex1-intcode {} -body {ex1} -result {99}
+
+
+test part1-intcode {} -body {part1} -result {stopped {0 0 0 0 0 0 0 0 0 13978427}}
+test part2-intcode {} -body {part2} -result {stopped 11189491}
+
+cleanupTests

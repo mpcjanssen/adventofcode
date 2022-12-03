@@ -1,0 +1,27 @@
+<article class="day-desc">
+<h2 id="part2">--- Part Two ---</h2><p>Now that the machine is calibrated, you're ready to begin molecule fabrication.</p>
+<p>Molecule fabrication always begins with just a single <span title="It's a Red-Nosed Reindeer electron.">electron</span>, <code>e</code>, and applying replacements one at a time, just like the ones during calibration.</p>
+<p>For example, suppose you have the following replacements:</p>
+<pre><code>e =&gt; H
+e =&gt; O
+H =&gt; HO
+H =&gt; OH
+O =&gt; HH
+</code></pre>
+<p>If you'd like to make <code>HOH</code>, you start with <code>e</code>, and then make the following replacements:</p>
+<ul>
+<li>
+<code>e =&gt; O</code> to get <code>O</code>
+</li>
+<li>
+<code>O =&gt; HH</code> to get <code>HH</code>
+</li>
+<li>
+<code>H =&gt; OH</code> (on the second <code>H</code>) to get <code>HOH</code>
+</li>
+</ul>
+<p>So, you could make <code>HOH</code> after <em>
+<code>3</code> steps</em>.  Santa's favorite molecule, <code>HOHOHO</code>, can be made in <em>
+<code>6</code> steps</em>.</p>
+<p>How long will it take to make the medicine?  Given the available <em>replacements</em> and the <em>medicine molecule</em> in your puzzle input, what is the <em>fewest number of steps</em> to go from <code>e</code> to the medicine molecule?</p>
+</article>

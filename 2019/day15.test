@@ -1,0 +1,9 @@
+package require tcltest
+namespace import ::tcltest::*
+
+source day15.tcl
+
+test part1 {} -body {part1} -result {300}
+test part2 {} -body {part2} -result {312}
+
+cleanupTests

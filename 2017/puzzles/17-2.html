@@ -1,0 +1,7 @@
+<article class="day-desc"><h2 id="part2">--- Part Two ---</h2>
+<p>The spinlock does not short-circuit.  Instead, it gets <em>more</em> angry. At least, you assume that's what happened; it's spinning significantly faster than it was a moment ago.</p>
+<p>You have good news and bad news.</p>
+<p>The good news is that you have improved calculations for how to stop the spinlock. They indicate that you actually need to identify <em>the value after <code>0</code></em> in the current state of the circular buffer.</p>
+<p>The bad news is that while you were determining this, the spinlock has just finished inserting its fifty millionth value (<code>50000000</code>).</p>
+<p><em>What is the value after <code>0</code></em> the moment <code>50000000</code> is inserted?</p>
+</article>

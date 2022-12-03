@@ -1,0 +1,24 @@
+<article class="day-desc"><h2 id="part2">--- Part Two ---</h2>
+<p>As you congratulate yourself for a job well done, you notice that the documentation has been on the back of the tablet this entire time. While you actually got most of the instructions correct, there are a few key differences. This assembly code isn't about sound at all - it's meant to be run <em>twice at the same time</em>.</p>
+<p>Each running copy of the program has its own set of registers and follows the code independently - in fact, the programs don't even necessarily run at the same speed. To coordinate, they use the <em>send</em> (<code>snd</code>) and <em>receive</em> (<code>rcv</code>) instructions:</p>
+<ul>
+<li>
+<code>snd X</code> <em>sends</em> the value of <code>X</code> to the other program. These values wait in a queue until that program is ready to receive them. Each program has its own message queue, so a program can never receive a message it sent.</li>
+<li>
+<code>rcv X</code> <em>receives</em> the next value and stores it in register <code>X</code>. If no values are in the queue, the program <em>waits for a value to be sent to it</em>. Programs do not continue to the next instruction until they have received a value. Values are received in the order they are sent.</li>
+</ul>
+<p>Each program also has its own <em>program ID</em> (one <code>0</code> and the other <code>1</code>); the register <code>p</code> should begin with this value.</p>
+<p>For example:</p>
+<pre><code>snd 1
+snd 2
+snd p
+rcv a
+rcv b
+rcv c
+rcv d
+</code></pre>
+<p>Both programs begin by sending three values to the other.  Program <code>0</code> sends <code>1, 2, 0</code>; program <code>1</code> sends <code>1, 2, 1</code>. Then, each program receives a value (both <code>1</code>) and stores it in <code>a</code>, receives another value (both <code>2</code>) and stores it in <code>b</code>, and then each receives the program ID of the other program (program <code>0</code> receives <code>1</code>; program <code>1</code> receives <code>0</code>) and stores it in <code>c</code>. Each program now sees a different value in its own copy of register <code>c</code>.</p>
+<p>Finally, both programs try to <code>rcv</code> a <em>fourth</em> time, but no data is waiting for either of them, and they reach a <em>deadlock</em>.  When this happens, both programs terminate.</p>
+<p>It should be noted that it would be equally valid for the programs to run at different speeds; for example, program <code>0</code> might have sent all three values and then stopped at the first <code>rcv</code> before program <code>1</code> executed even its first instruction.</p>
+<p>Once both of your programs have terminated (regardless of what caused them to do so), <em>how many times did program <code>1</code> send a value</em>?</p>
+</article>
