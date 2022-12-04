@@ -129,7 +129,7 @@ namespace eval aoc {
         return
     }
     # puts $html
-    dom parse -keepEmpties -html5 $html doc
+    dom parse -keepEmpties -html $html doc
     set parthtml [lindex [$doc selectNodes //article] $part]
     if {$parthtml eq {}} {
         incr part
