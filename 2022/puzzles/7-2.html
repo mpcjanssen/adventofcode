@@ -1,0 +1,15 @@
+<article class="day-desc">
+<h2 id="part2">--- Part Two ---</h2><p>Now, you're ready to choose a directory to delete.</p>
+<p>The total disk space available to the filesystem is <code><em>70000000</em></code>. To run the update, you need unused space of at least <code><em>30000000</em></code>. You need to find a directory you can delete that will <em>free up enough space</em> to run the update.</p>
+<p>In the example above, the total size of the outermost directory (and thus the total amount of used space) is <code>48381165</code>; this means that the size of the <em>unused</em> space must currently be <code>21618835</code>, which isn't quite the <code>30000000</code> required by the update. Therefore, the update still requires a directory with total size of at least <code>8381165</code> to be deleted before it can run.</p>
+<p>To achieve this, you have the following options:</p>
+<ul>
+<li>Delete directory <code>e</code>, which would increase unused space by <code>584</code>.</li>
+<li>Delete directory <code>a</code>, which would increase unused space by <code>94853</code>.</li>
+<li>Delete directory <code>d</code>, which would increase unused space by <code>24933642</code>.</li>
+<li>Delete directory <code>/</code>, which would increase unused space by <code>48381165</code>.</li>
+</ul>
+<p>Directories <code>e</code> and <code>a</code> are both too small; deleting them would not free up enough space. However, directories <code>d</code> and <code>/</code> are both big enough! Between these, choose the <em>smallest</em>: <code>d</code>, increasing unused space by <code><em>24933642</em></code>.</p>
+<p>Find the smallest directory that, if deleted, would free up enough space on the filesystem to run the update. <em>What is the total size of that directory?</em>
+</p>
+</article>
