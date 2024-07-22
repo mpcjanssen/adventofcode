@@ -14,13 +14,14 @@
   (map delta input))
   
 
-(def part2
+(defn part1 []
  (apply + deltas))
 
-(def part1
+(defn part2 []
  (count
   (reductions
    #(if (= %1 -1) (reduced nil) (+ %1 %2))
     deltas)))
 
-[part1 part2]
+(defn solve []
+  [(part1) (part2)])
