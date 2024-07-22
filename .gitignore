@@ -21,3 +21,9 @@ etc/*
 .fossil
 .fslckout
 venv/*
+.jupyter/
+.nrepl*
+.clj-kondo/
+.calva/
+repl-port
+target/
