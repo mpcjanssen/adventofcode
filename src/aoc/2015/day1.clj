@@ -2,7 +2,7 @@
   (:require [clojure.pprint :as pprint]
             [aoc.core :as aoc]))
 
-(defonce input
+(def input
  (slurp "./2015/input/1.txt"))
 
 
@@ -11,7 +11,7 @@
    \( 1
     \) -1))
 
-(defonce deltas
+(def deltas
   (map delta input))
   
 

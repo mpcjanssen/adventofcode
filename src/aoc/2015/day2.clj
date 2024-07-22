@@ -2,7 +2,7 @@
   (:require [clojure.string :as str]
             [aoc.core :as aoc]))
 
-(defn input []
+(def input 
   (slurp "./2015/input/2.txt"))
 
 (defn box [l]
@@ -11,8 +11,8 @@
   (sort (map #(Integer/parseInt % ) (str/split l #"x")))) 
    
 
-(defn boxes []
-  (map box (str/split-lines (input))))
+(def boxes
+  (map box (str/split-lines input)))
 
 (defn wrapping [box]
   (let 
@@ -32,8 +32,5 @@
 
 
 (defn solve []
-  (let [bs (boxes)]
-    [(aoc/mapsum wrapping bs)
-     (aoc/mapsum ribbon bs)]))  
-  
-(ribbon [4 3 2])
+    [(aoc/mapsum wrapping boxes)
+     (aoc/mapsum ribbon boxes)])  

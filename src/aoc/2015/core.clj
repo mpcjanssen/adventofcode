@@ -8,6 +8,7 @@
 
 (defn -main
   [& _]
-  (pprint/pprint (aoc.2015.day1/solve)) 
-  (pprint/pprint (aoc.2015.day2/solve)) 
-  (pprint/pprint (aoc.2015.day3/solve)))              
+  (pprint/pprint {:day1 (aoc.2015.day1/solve)}) 
+  (pprint/pprint {:day2 (aoc.2015.day2/solve)}) 
+  (pprint/pprint {:day3 (aoc.2015.day3/solve)})) 
+           
