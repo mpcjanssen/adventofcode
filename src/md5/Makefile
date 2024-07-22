@@ -1,4 +1,4 @@
-.PHONY: tclstubs-nimble
+.PHONY: tclstubs-nimble y2015
 
 all: tclstubs-nimble libaocmd5.so
 
@@ -11,3 +11,4 @@ tclstubs-nimble:
 
 clean:
 	rm libaocmd5.so
+

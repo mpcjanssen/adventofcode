@@ -1,3 +1,6 @@
-(ns aoc.core
-  (:require [clojure.pprint :as pprint]))
+(ns aoc.core)
 
+(defn mapsum [fn qs]
+  (apply
+   +
+   (map fn qs)))

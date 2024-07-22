@@ -1,5 +1,6 @@
-(ns aoc.day2
-  (:require [clojure.string :as str]))
+(ns aoc.2015.day2
+  (:require [clojure.string :as str]
+            [aoc.core :as aoc]))
 
 (defn input []
   (slurp "./2015/input/2.txt"))
@@ -32,7 +33,7 @@
 
 (defn solve []
   (let [bs (boxes)]
-    [(apply + (map wrapping bs))
-     (apply + (map ribbon bs))]))  
+    [(aoc/mapsum wrapping bs)
+     (aoc/mapsum ribbon bs)]))  
   
 (ribbon [4 3 2])

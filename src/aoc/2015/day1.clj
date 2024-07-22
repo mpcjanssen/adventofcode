@@ -1,5 +1,6 @@
-(ns aoc.day1
-  (:require [clojure.pprint :as pprint]))
+(ns aoc.2015.day1
+  (:require [clojure.pprint :as pprint]
+            [aoc.core :as aoc]))
 
 (defonce input
  (slurp "./2015/input/1.txt"))
