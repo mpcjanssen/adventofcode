@@ -1,6 +1,5 @@
 (ns aoc.2015.day3
-  (:require [clojure.string :as str]
-            [aoc.core :as aoc]))
+  (:require [aoc.core :as aoc]))
 
 (def input 
   (slurp "./2015/input/3.txt"))
@@ -17,13 +16,6 @@
  (aoc/transpose 
   (partition 2 input)))
 
-(count  
- (set
-  (concat
-   (reductions move [0 0] (first eggnog))
-   (reductions move [0 0] (last eggnog)))))
-
-
 (defn solve []
    [(count (set (reductions move [0 0] input)))
     (count
@@ -31,4 +23,5 @@
       (concat
        (reductions move [0 0] (first eggnog))
        (reductions move [0 0] (last eggnog)))))])  
+
   
