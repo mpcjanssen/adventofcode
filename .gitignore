@@ -27,3 +27,4 @@ venv/*
 .calva/
 repl-port
 target/
+.lsp/
