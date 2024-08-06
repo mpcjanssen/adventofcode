@@ -1,5 +1,8 @@
 (ns aoc.core)
 
+(import 'java.security.MessageDigest
+        'java.math.BigInteger)
+
 (defn mapsum [fn qs]
   (apply
    +
@@ -7,3 +10,4 @@
 
 (defn transpose [m]
   (apply mapv vector m))
+
