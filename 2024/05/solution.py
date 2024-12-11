@@ -20,13 +20,14 @@ for p in pages:
     else:
         invalid += [p]
 
+print(part1)
+
 def rep_sort(a,b):
     if [a,b] in rules:
         return -1
     else:
         return 1
 
-print(part1)
 
 cmp = cmp_to_key(rep_sort)
 
