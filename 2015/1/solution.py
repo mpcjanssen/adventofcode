@@ -1,5 +1,3 @@
-from functools import cache
-
 input = open(0).read().strip()
 
 floor = 0

@@ -1,5 +1,3 @@
-from functools import cache
-
 input = open(0).readlines()
 
 boxes = [list(sorted(map(int,l.strip().split("x")))) for l in input]
