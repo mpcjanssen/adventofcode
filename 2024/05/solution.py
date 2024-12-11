@@ -4,8 +4,6 @@ rules,pages = open(0).read().split("\n\n")
 rules =  [ list(map(int, l.strip().split('|'))) for l in rules.split('\n')]
 pages =  [ list(map(int, l.strip().split(','))) for l in pages.strip().split('\n')]
 
-
-
 def valid(p):
     for bef,aft in zip(p,p[1:]):
         if [bef,aft] not in rules: return False
