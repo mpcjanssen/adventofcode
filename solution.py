@@ -1,2 +1,3 @@
-input = open(0).readlines()
+input = open(0).read()
+
 print(input)
