@@ -17,8 +17,6 @@ def count(stone,steps):
         return left + right
     else:
         return count(stone * 2024, steps-1 )
-    
-            
 
 print(sum([count(st,25) for st in input]))
 print(sum([count(st,75) for st in input]))
