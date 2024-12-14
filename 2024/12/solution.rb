@@ -1,2 +1,5 @@
 input = $stdin.readlines.map { |l| l.strip.chars}
-p input
+
+rows = input.count
+cols = input[0].count
+
