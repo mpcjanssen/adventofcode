@@ -7,6 +7,20 @@ robots = File.open(ARGV[0]).readlines().map { |l|
 wx = 101
 wy = 103
 
+overall_period = 1
+robots.each { |_,_,dx,dy|
+  periodx =  wx.lcm(dx)
+  periody = wy.lcm(dy)
+  period = wx.lcm(wy)
+  overall_period = overall_period.lcm(period)
+  
+}
+
+# The overall period is wx * wy because after so many steps every robot is back 
+# at the initial position after having done dx x cycles and dy y cycles 
+p overall_period
+p wx*wy
+
 # wx = 11
 # wy = 7
 
@@ -53,20 +67,25 @@ end
 # print robots, wx,wy
 min_safe = safety robots,wx,wy
 seconds = 0
+result = nil
+safest_robots = robots
 loop do
   robots = step(robots,wx,wy)
   seconds += 1
-  p seconds if seconds % 100 == 0
+  break if seconds > overall_period
   # print robots,wx,wy
   s = safety robots,wx,wy
-  if s <= min_safe
-    display robots,wx,wy
-    p seconds
-    $stdin.gets "Press key"
+ 
+  if s < min_safe
+    result = seconds    
+    # $stdin.gets "Press key"
+    safest_robots = robots
     min_safe = s
   end
 end
 
-p safety(robots,wx,wy)
+display(safest_robots, wx ,wy)
+p result
+
 
 # print robots, wx,wy
