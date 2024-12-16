@@ -68,11 +68,9 @@ def walk2(cgrid,start, target, maxscore)
   bestscores.default = maxscore+1
   walks = [{path: [start], dir: 1, score: 0 }]
   loop do
-    active_walks = walks.reject { |w| w[:path].last == target || w[:score] >= maxscore}
-    # p active_walks.count
-    return bestpaths if active_walks.count == 0
+    return bestpaths if walks.count == 0
     newwalks = []
-    active_walks.each { |w|
+    walks.each { |w|
       score = w[:score]
       dir = w[:dir]
       path = w[:path]
@@ -82,13 +80,13 @@ def walk2(cgrid,start, target, maxscore)
         newpos = pos + newdir
         next if cgrid[newpos] == '#'
         newscore = score + dscore
+        next if newscore > bestscores[newpos] || newscore > maxscore
         nextpath = path.clone
         nextpath << newpos
         if newpos == target && newscore == maxscore
           bestpaths << nextpath
           next
         end
-        next if newscore > bestscores[newpos] || newscore > maxscore
         bestscores[pos] = score
         newwalk = {path: nextpath, dir:newdir, score: newscore}
         newwalks << newwalk
