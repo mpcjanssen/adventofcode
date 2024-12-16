@@ -75,23 +75,24 @@ def walk2(cgrid,start, target, maxscore)
     active_walks.each { |w|
       score = w[:score]
       dir = w[:dir]
+      path = w[:path]
+      pos = path.last
       [[1,1], [Complex::I,1001], [-Complex::I,1001]].each { |move, dscore|
-        path = w[:path].clone
-        pos = path.last
         newdir = move*dir
         newpos = pos + newdir
-        # p score if newpos == target
-        # p "move pos #{pos} #{move} -> #{newpos} #{newdir}"
         next if cgrid[newpos] == '#'
         newscore = score + dscore
-        next if newscore > bestscores[[newpos,newdir]] || newscore > maxscore
-        bestscores[[pos,dir]] = newscore
-        next if path.include? newpos
-        path << newpos
-        bestpaths << path   if newpos == target && newscore == maxscore
-        newwalk = {path: path, dir:newdir, score: newscore}
+        nextpath = path.clone
+        nextpath << newpos
+        if newpos == target && newscore == maxscore
+          bestpaths << nextpath
+          next
+        end
+        next if newscore > bestscores[newpos] || newscore > maxscore
+        bestscores[pos] = score
+        newwalk = {path: nextpath, dir:newdir, score: newscore}
         newwalks << newwalk
-    }
+      }
 
     }
     # p newheads
