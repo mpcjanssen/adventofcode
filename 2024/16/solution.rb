@@ -84,8 +84,8 @@ def walk2(cgrid,start, target, maxscore)
         # p "move pos #{pos} #{move} -> #{newpos} #{newdir}"
         next if cgrid[newpos] == '#'
         newscore = score + dscore
-        next if newscore > bestscores[newpos] || newscore > maxscore
-        bestscores[pos] = newscore
+        next if newscore > bestscores[[newpos,newdir]] || newscore > maxscore
+        bestscores[[pos,dir]] = newscore
         next if path.include? newpos
         path << newpos
         bestpaths << path   if newpos == target && newscore == maxscore
