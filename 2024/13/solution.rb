@@ -17,7 +17,6 @@ def solve(machine, offset)
   # ax*pa + bx*pb = tx
   # ay*pa + by*pb = ty
 
-
   s =  (bx*py - by*px)/ (ay*bx-ax*by)
   t = (px - s*ax)/bx
   # p [s,t]
