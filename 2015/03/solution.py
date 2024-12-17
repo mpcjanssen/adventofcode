@@ -20,8 +20,6 @@ for s in data:
     santa = step(santa,s)    
     part1.add(santa)
     
-print(len(part1))
-
 chunked_steps = [data[2*i:2*i+2] for i in range(0,len(data)//2)]
 part2 = set()
 santa = (0,0)
@@ -33,5 +31,4 @@ for s in chunked_steps:
     part2.add(santa)
     part2.add(robo)
 
-print(len(part2))
-
+print((len(part1),len(part2)))
