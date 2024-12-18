@@ -1,5 +1,3 @@
-require 'set'
-
 bytes = $stdin.readlines.map {|l|
   l.strip.split(",").map(&:to_i)
 }
