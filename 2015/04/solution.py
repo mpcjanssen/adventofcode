@@ -1,8 +1,7 @@
 from hashlib import md5
 input = open(0).read().strip()
 postfix = 0
-part1 = None
-part2 = None
+part1 = part2 = None
 while True:
     postfix +=1
     if part1 == None and md5((input+str(postfix)).encode('utf-8')).hexdigest().startswith('00000'): part1 = postfix
