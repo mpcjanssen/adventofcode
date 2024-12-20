@@ -2,12 +2,11 @@
     input = $stdin.read().strip()
 
     grid = AOC::Cgrid.new(input)
-    puts grid.display
+    # puts grid.display
     
     start = grid.find_one 'S' 
     target = grid.find_one 'E' 
     
-    cache = {}
     def solve(grid,start,target)
       dirs = grid.dir4
       scores = {start => 0}
@@ -37,7 +36,8 @@
       racetrack = racetrack.sort_by {|p| scores[p]}
 
       # verify that the racetrack has no dead ends or wider parts
-      # so that every point has a proper score when solving with BFS once
+      # also ensure there are no longer paths from S->E
+      # This means that every point has a proper score when solving with BFS once
       raise "Racetrack assumption not correct" if cleanscore != racetrack.size-1
     
       (0..racetrack.size-1).each {| idx |
