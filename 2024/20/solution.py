@@ -1,22 +1,12 @@
 from collections import deque
 from collections import defaultdict
 
-
 grid = [l.strip() for l in open(0).readlines()]
-# print(grid)
-
+rows = len(grid)
+cols = len(grid[0])
 start = None
 end = None
 racetrack = []
-
-rows = len(grid)
-cols = len(grid[0])
-
-def manh(p1,p2):
-    r1,c1 = p1
-    r2,c2 = p2
-    return abs(r1-r2) + abs(c1-c2)
-
 
 for r in range(rows):
     for c in range(cols):
@@ -28,6 +18,11 @@ for r in range(rows):
             end = p
         if v == 'S':
             start = p
+
+def manh(p1,p2):
+    r1,c1 = p1
+    r2,c2 = p2
+    return abs(r1-r2) + abs(c1-c2)
 
 def scores(start,end):
     dirs = [[0,1],[0,-1],[1,0],[-1,0]]
@@ -70,15 +65,11 @@ def cheats(cheattime):
     
     return imps
 
-
-
-# print(start, end)
 sc = scores(start,end)
 cleanscore = sc[end]
-# print(cleanscore)
 
 racetrack.sort(key=lambda t: sc[t])
-# print(racetrack)
+
 part1 = 0
 for k,v in cheats(2).items():
     if k >= 100: part1+=v
