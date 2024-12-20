@@ -25,22 +25,19 @@ def scores(start,end):
     scores = {}
     scores[start] = 0
     heads =  deque([start])
-    # print(heads)
+
     while not end in scores and heads:
         r,c = heads.popleft()
         # print(r,c)
-        score = scores[(r,c)]
         for dr,dc in dirs:
             nr, nc = r+dr,c+dc
             if nr < 0 or nr >= rows: continue
             if nc < 0 or nc >= cols: continue
-            if grid[nr][nc] == '#': continue
             if (nr,nc) in scores: continue
-            scores[(nr,nc)] = score+1
+            if grid[nr][nc] == '#': continue
+            scores[(nr,nc)] = scores[(r,c)]+1
             heads.append((nr,nc))
        
-        # print(heads)
-
     return scores
 
 def cheats(cheattime,threshold):
@@ -59,7 +56,6 @@ def cheats(cheattime,threshold):
     return imps
 
 sc = scores(start,end)
-cleanscore = sc[end]
 
 racetrack.sort(key=lambda t: sc[t])
 
