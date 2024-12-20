@@ -1,5 +1,5 @@
     require_relative '../../lib/aoc.rb'
-    input = $stdin.read()
+    input = $stdin.read().strip()
 
     grid = AOC::Cgrid.new(input)
     puts grid.display

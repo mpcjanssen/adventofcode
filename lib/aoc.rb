@@ -1,4 +1,8 @@
 module AOC
+  def self.all_ints(input)
+    input.scan(/-?\d+/).map(&:to_i)
+  end
+
   class Cgrid
     DIR4 = [1,-1,Complex::I,-Complex::I]
     include Enumerable
@@ -8,8 +12,7 @@ module AOC
       @cols = 0
       @grid = {}
       @grid.default = default
-      @default = default
-      input.split("\n").each.with_index { |l,ridx|
+      input.lines.each.with_index { |l,ridx|
         @rows+=1
         @cols = 0
         l.strip.chars.each.with_index { |v,cidx|
