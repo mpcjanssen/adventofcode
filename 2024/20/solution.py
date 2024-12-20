@@ -1,6 +1,6 @@
-from collections import defaultdict,deque,Counter
+from collections import deque,Counter
 
-grid = [l.strip() for l in open(0).readlines()]
+grid = [l.strip() for l in open(0)]
 rows = len(grid)
 cols = len(grid[0])
 start = None
