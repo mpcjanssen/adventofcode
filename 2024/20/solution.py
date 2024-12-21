@@ -18,7 +18,7 @@ for r in range(rows):
         if v == 'S':
             start = p
 
-def manh(p1,p2): r1,c1 = p1 ; r2,c2 = p2 ; return abs(r1-r2) + abs(c1-c2)
+# def manh(p1,p2): r1,c1 = p1 ; r2,c2 = p2 ; return abs(r1-r2) + abs(c1-c2)
 
 def scores(start,end):
     dirs = [[0,1],[0,-1],[1,0],[-1,0]]
@@ -45,19 +45,21 @@ def cheats(cheattime,threshold):
     tracksize = len(racetrack)
     for idx in range(tracksize-1):
         p1 = racetrack[idx]
-        options = racetrack[idx+1:]
+        x,y = p1
         startscore = sc[p1]
-        for p2 in options:
-            dist = manh(p1,p2)
-            if dist > cheattime: continue
-            delta = sc[p2] - startscore - dist
-            if delta >= threshold: imps[delta]+= 1
+        for dx in range(-cheattime,cheattime+1):
+            rest = cheattime - abs(dx)
+            for dy in range(-rest,rest+1):
+                chp = (x+dx,y+dy)
+                if chp in sc:
+                    delta_sc = sc[chp]-startscore-abs(dx)-abs(dy)
+                    if delta_sc >= threshold: imps[delta_sc]+= 1
     
     return imps
 
 sc = scores(start,end)
 
-racetrack.sort(key=lambda t: sc[t])
+# racetrack.sort(key=lambda t: sc[t])
 
 part1 = sum(cheats(2,100).values())
 part2 = sum(cheats(20,100).values())
