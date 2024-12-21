@@ -45,14 +45,18 @@ def cheats(cheattime,threshold):
     tracksize = len(racetrack)
     for idx in range(tracksize-1):
         p1 = racetrack[idx]
-        x,y = p1
+        r,c = p1
         startscore = sc[p1]
-        for dx in range(-cheattime,cheattime+1):
-            rest = cheattime - abs(dx)
-            for dy in range(-rest,rest+1):
-                chp = (x+dx,y+dy)
+        # check all scores of the points within the manhattan distance of
+        # of the maximum cheat time, anything further will never be shorter than this shortest
+        # distance so can be disregarded
+        for dr in range(-cheattime,cheattime+1):
+            rest = cheattime - abs(dr)
+            for dc in range(-rest,rest+1):
+                chp = (r+dr,c+dc)
+                # points on the racetrack have a score
                 if chp in sc:
-                    delta_sc = sc[chp]-startscore-abs(dx)-abs(dy)
+                    delta_sc = sc[chp]-startscore-abs(dr)-abs(dc)
                     if delta_sc >= threshold: imps[delta_sc]+= 1
     
     return imps
