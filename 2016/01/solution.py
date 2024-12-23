@@ -1,6 +1,6 @@
 from collections import defaultdict
 
-instructions = [step.strip() for step in open(0).read().split(',')]
+instructions = [step.strip() for step in open(0).readlines().split(',')]
 
 visited = set()
 twice = None
@@ -11,7 +11,7 @@ for step in instructions:
     dist = int(step[1:])
     if turn == 'L': dx,dy = -dy,dx
     if turn == 'R': dx,dy = dy,-dx
-    for i in range(dist):
+    for _ in range(dist):
         x +=dx
         y +=dy
         if (x,y) in visited and twice == None:
