@@ -13,18 +13,19 @@ robots.each { |_,_,dx,dy|
   periody = wy.lcm(dy)
   period = wx.lcm(wy)
   overall_period = overall_period.lcm(period)
-  
+
 }
 
-# The overall period is wx * wy because after so many steps every robot is back 
-# at the initial position after having done dx x cycles and dy y cycles 
-p overall_period
+# An overall period is wx * wy because after so many steps every robot is back
+# at the initial position after having done dx x cycles and dy y cycles
+# And because both numbers are prime this is the shortest period
+overall_period = wx.lcm(wy)
 p wx*wy
 
 # wx = 11
 # wy = 7
 
-def step(robots,wx,wy) 
+def step(robots,wx,wy)
   robots.map { | robot |
     x,y,dx,dy = robot
     x = (x + dx) % wx
@@ -32,13 +33,13 @@ def step(robots,wx,wy)
     [x,y,dx,dy]
   }
 end
-def display(robots,wx,wy) 
+def display(robots,wx,wy)
   g = Array.new(wy) { Array.new(wx,'.') }
   robots.each { |x,y,_,_|
     # p [x,y]
     g[y][x] = 'X'
   }
-  puts g.map { | l | l.join("")}.join("\n") 
+  puts g.map { | l | l.join("")}.join("\n")
 end
 
 def safety(robots,wx,wy)
@@ -75,9 +76,9 @@ loop do
   break if seconds > overall_period
   # print robots,wx,wy
   s = safety robots,wx,wy
- 
+
   if s < min_safe
-    result = seconds    
+    result = seconds
     # $stdin.gets "Press key"
     safest_robots = robots
     min_safe = s
