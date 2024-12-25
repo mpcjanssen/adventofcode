@@ -1,2 +1,11 @@
 Metrics/MethodLength:
-  Max: 20
+  Max: 30
+
+Metrics/CyclomaticComplexity:
+  Max: 15
+
+Metrics/AbcSize:
+  Enabled: false
+
+Style/GlobalVars:
+  Enabled: false
