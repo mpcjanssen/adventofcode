@@ -1,3 +1,4 @@
 **/in.txt
 .venv/
 .ruby-lsp/
+.DS_Store

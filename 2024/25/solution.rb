@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# rubocop:disable Style/GlobalVars
-
 $items = $stdin.read.strip.split("\n\n").map { |it| it.strip.split("\n").map(&:chars) }
 $locks = []
 $keys = []
@@ -26,5 +24,3 @@ part1 = $keys.map do |k|
 end.flatten(1).count(true)
 
 p part1
-
-# rubocop:enable Style/GlobalVars
