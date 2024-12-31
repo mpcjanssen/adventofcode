@@ -12,7 +12,7 @@ module AOC
   class Cgrid
     DIR4 = [1, -1, Complex::I, -Complex::I].freeze
     include Enumerable
-    attr_accessor :rows, :cols, :default, :grid
+    attr_accessor :rows, :cols, :default
 
     def initialize(input, default = '#')
       @rows = 0
