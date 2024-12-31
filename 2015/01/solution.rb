@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-input = $stdin.read.chars
+input = File.open('in.txt').read.chars
 
 input = input.map { |c| c == ')' ? -1 : 1 }
 accum = input.each_with_object([0]) { |a, acc| acc << acc[-1] + a }.to_a

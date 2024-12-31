@@ -5,17 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python Debugger: Current File with Arguments",
-            "type": "debugpy",
+            "type": "ruby_lsp",
             "request": "launch",
-            "program": "${file}",
-            "cwd": "${fileDirname}",
-            "console": "integratedTerminal",
-            "args": [
-                "${command:pickArgs}",
-                "<",
-                "test.txt"
-            ]
+            "name": "Debug program",
+            "program": "ruby "
+        },
+        {
+            "type": "ruby_lsp",
+            "name": "Debug AOC script",
+            "request": "launch",
+            "program": "bash -c '(cd ${fileDirname} ; ruby ${file} < in.txt)'"
+        },
+        {
+            "type": "ruby_lsp",
+            "name": "Debug test",
+            "request": "launch",
+            "program": "ruby -Itest ${relativeFile}"
+        },
+        {
+            "type": "ruby_lsp",
+            "name": "Attach debugger",
+            "request": "attach"
         }
     ]
 }
