@@ -37,6 +37,7 @@ def cheats(grid, start, target, cheattime)
   cleanscore = scores[target]
   racetrack = grid.find_all 'SE.'.chars
   racetrack = racetrack.sort_by { |p| scores[p] }
+  racetrack.freeze
 
   # verify that the racetrack has no dead ends or wider parts
   # also ensure there are no longer paths from S->E

@@ -27,6 +27,7 @@ module AOC
           @grid[Complex(cidx, ridx)] = v
         end
       end
+      @grid.freeze
     end
 
     def []=(idx, val)
