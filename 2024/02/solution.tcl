@@ -19,11 +19,13 @@ proc subset {s1 s2} {
 }
 
 proc issafe report {
+    set incr [list 1 2 3]
+    set decr [list -1 -2 -3]
     set deltas [lmap a [lrange $report 0 end-1] b [lrange $report 1 end] {
         expr {$b - $a}
     }]
-    if {[lindex $deltas 0] > 0 && [subset $deltas {1 2 3}]} {return 1}
-    if {[lindex $deltas 0] < 0 && [subset $deltas {-1 -2 -3}]} {return 1}
+    if {[lindex $deltas 0] > 0 && [subset $deltas $incr]} {return 1}
+    if {[lindex $deltas 0] < 0 && [subset $deltas $decr]} {return 1}
     return 0
 }
 
